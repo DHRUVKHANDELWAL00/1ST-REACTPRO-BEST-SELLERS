@@ -1,0 +1,78 @@
+import  React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+const Author='John';
+const Title='this is my message';
+const Image="https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg"
+//
+const books=[
+  {
+    author:"Ron DeSantis",
+    title:"The Courage to Be Free",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81QOUISS7VL._AC_UL600_SR600,400_.jpg",
+    id:1,
+  },
+  {
+    author:"Taylor Jenkins Reid",
+    title:"Daisy Jones & The Six: A Novel",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81a4bSDHqUL._AC_UL600_SR600,400_.jpg",
+    id: 2,
+  },
+  {
+    author:"James Clear",
+    title:"Atomic Habits: An Easy & Proven Way",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L._AC_UL600_SR600,400_.jpg",
+    id:3,
+  },
+  {
+    author:"The Body Keeps the Score: Brain, Mind",
+    title:"Bessel van der Kolk M.D.",
+    image:"https://images-na.ssl-images-amazon.com/images/I/61NdJMwAThS._AC_UL600_SR600,400_.jpg",
+    id:4,
+  },
+  {
+    author:"Mehdi Hasan",
+    title:"Win Every Argument: The Art of Debating,",
+    image:"https://images-na.ssl-images-amazon.com/images/I/71JvwqNUBqL._AC_UL600_SR600,400_.jpg",
+    id:5,
+  }
+
+];
+
+
+
+//
+const BookList=()=>{
+  return (
+    <section className="booklist">
+    {books.map((book)=>{
+      const {image,title,author,id}=book;
+       //console.log(book);
+       return(
+         <Book img={image} title={title} author={author} key={id}/>
+       );
+    })}
+
+    </section>
+  );
+};
+
+const Book=(props)=>{
+  //console.log(props);
+  const {img,title,author,children}=props;
+  return(
+  <article className='book'>
+  <img src={img} alt={title} />
+  <h2>{title}</h2>
+  <h4>{author}</h4>
+  {children}
+  </article>
+);
+};
+
+
+
+
+
+const root= ReactDOM.createRoot(document.getElementById('root'));
+root.render(<BookList />);

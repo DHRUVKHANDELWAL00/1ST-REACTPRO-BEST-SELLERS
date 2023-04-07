@@ -1,0 +1,19 @@
+const EventExamples=()=>{
+  //return <h1>heklo</h1>;
+  const handleFormInput=(e)=>{
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.value);
+    console.log('handle form input');
+  }
+  const HandleButtonClick=()=>{
+    alert('handle button click');
+  }
+  return <section>
+  <form>
+  <h2>Typical form</h2>
+  <input type='text' name='example' onChange={handleFormInput} style={{margin:'1rem 0'}}/>
+  </form>
+  <button onClick={HandleButtonClick}>click me</button>
+  </section>
+};

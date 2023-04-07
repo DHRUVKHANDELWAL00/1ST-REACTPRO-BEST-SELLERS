@@ -1,0 +1,14 @@
+//import  React from 'react';
+//import ReactDOM from 'react-dom/client';
+const Person=()=><h2>John</h2>
+const Message=()=>{
+  return <p>this is my message</p>;
+};
+function Greeting(){
+  return <div>
+  <Person/>
+  <Message/>
+  </div>
+}
+//const root= ReactDOM.createRoot(document.getElementById('root'))
+//root.render(<Greeting />)

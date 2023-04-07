@@ -1,0 +1,104 @@
+import  React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+//const Author='John';
+//const Title='this is my message';
+//const Image="https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg"
+//
+const books=[
+  {
+    author:"Ron DeSantis",
+    title:"The Courage to Be Free",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81QOUISS7VL._AC_UL600_SR600,400_.jpg",
+    id:1,
+  },
+  {
+    author:"Taylor Jenkins Reid",
+    title:"Daisy Jones & The Six: A Novel",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81a4bSDHqUL._AC_UL600_SR600,400_.jpg",
+    id: 2,
+  },
+  {
+    author:"James Clear",
+    title:"Atomic Habits: An Easy & Proven Way",
+    image:"https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L._AC_UL600_SR600,400_.jpg",
+    id:3,
+  },
+  {
+    author:"The Body Keeps the Score: Brain, Mind",
+    title:"Bessel van der Kolk M.D.",
+    image:"https://images-na.ssl-images-amazon.com/images/I/61NdJMwAThS._AC_UL600_SR600,400_.jpg",
+    id:4,
+  },
+  {
+    author:"Mehdi Hasan",
+    title:"Win Every Argument: The Art of Debating,",
+    image:"https://images-na.ssl-images-amazon.com/images/I/71JvwqNUBqL._AC_UL600_SR600,400_.jpg",
+    id:5,
+  }
+
+];
+
+
+
+//
+const BookList=()=>{
+  const someValue="shakeandbake";
+  const displayValue=()=>{
+    console.log(someValue);
+  }
+    return (
+    <section className="booklist">
+    <EventExamples/>
+    {books.map((book)=>{
+      //const {image,title,author,id}=book;
+       //console.log(book);
+       return <Book {...book} key={book.id} displayValue={displayValue} />
+         //<Book img={image} title={title} author={author} key={id}/>
+
+    })}
+    </section>
+  );
+};
+
+const Book=(props)=>{
+  //console.log(props);
+  const {image,title,author,displayValue}=props;
+  //const display=()=>{
+  //  console.log(author);
+  //};
+  return(
+  <article className='book'>
+  <img src={image} alt={title} />
+
+  <h2>{title}</h2>
+  <h4>{author}</h4>
+  <button onClick={displayValue}>click me</button>
+  </article>
+);
+};
+
+const EventExamples=()=>{
+  //return <h1>heklo</h1>;
+  const handleFormInput=(e)=>{
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.value);
+    console.log('handle form input');
+  }
+  const HandleButtonClick=()=>{
+    alert('handle button click');
+  }
+  return <section>
+  <form>
+  <h2>Typical form</h2>
+  <input type='text' name='example' onChange={handleFormInput} style={{margin:'1rem 0'}}/>
+  </form>
+  <button onClick={HandleButtonClick}>click me</button>
+  </section>
+};
+
+
+
+const root= ReactDOM.createRoot(document.getElementById('root'));
+root.render(<BookList />);

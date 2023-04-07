@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lato&family=Montserrat&family=Ubuntu:wght@500&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: \cursive;
+  background: #f1f5f8;
+  color:#222;
+}
+.booklist{
+  width:90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap:3rem;
+  text-align: center;
+}
+.booklist h1{
+  font-size: 100px;
+  font-family: 'Cedarville Cursive', cursive;
+}
+@media screen and(min-width:768px){
+  .booklist{
+    grid-template-columns: repeat(3,1fr);
+    align-items: start;
+  }
+}
+.book{
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.book img{
+  width: 100%;
+  object-fit: cover;
+}
+.book h2{
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.book h4{
+  color:#617d98;
+  font-size: 0.90rem;
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+}
+.book p{
+  margin: 1rem 0.05rem;
+}
